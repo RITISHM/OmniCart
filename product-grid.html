@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Collection - Luxeon</title>
+    <meta name="description" content="Discover the ultimate Gen Z clothing line! Trendy, bold, and effortlessly stylish. Your #1 destination for the latest fashion that defines your vibe">
+    
+    <!-- Favicon -->
+    <link href="photos/google-gemini-icon.png" rel="icon" media="(prefers-color-scheme: light)">
+    <link href="photos/google-gemini-icon.png" rel="icon" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="https://framerusercontent.com/images/9jFUoQq7OgK96WJ59dy8SbCQ78I.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/product-grid.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+          <span>LUXEON</span>
+          <svg class="star-icon" width="17" height="18" viewBox="0 0 17 18">
+            <path d="M 0 9 C 7.173 9.733 7.767 10.327 8.5 17.5 C 9.233 10.326 9.827 9.733 17 9 C 9.827 8.267 9.233 7.673 8.5 0.5 C 7.767 7.673 7.173 8.267 0 9 Z" fill="currentColor"/>
+          </svg>
+        </a>
+        
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Collections</a></li>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <button class="nav-icon" title="Search" aria-label="Search" onclick="toggleSearch()">
+                    <span class="icon-text">🔍</span>
+                </button>
+                <button class="nav-icon" title="Wishlist" aria-label="Wishlist" onclick="openWishlist()">
+                    <span class="icon-text">♡</span>
+                    <span class="cart-badge" id="wishlist-count" style="display: none;">0</span>
+                </button>
+                <button class="nav-icon" title="Cart" aria-label="Shopping Cart" onclick="openCart()">
+                    <span class="icon-text">🛒</span>
+                    <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                </button>
+                <button class="nav-icon" title="Account" aria-label="User Account" onclick="openAccount()">
+                    <span class="icon-text">👤</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Mobile Menu" onclick="toggleMobileMenu()">
+                    <span class="icon-text">☰</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile Navigation">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <a href="#" class="logo">LUXEON +</a>
+                    <button class="mobile-nav-close" aria-label="Close Mobile Menu" onclick="toggleMobileMenu()">
+                        <span class="icon-text">✕</span>
+                    </button>
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Collections</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Overview</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Features</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">About us</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="#">Home</a> / <a href="#">Collections</a> / Urban Collection
+        </nav>
+
+        <div class="collection-header">
+            <h1 class="collection-title">Urban Collection</h1>
+            <p class="collection-subtitle">Street-inspired pieces for everyday confidence. Modern cuts meet sustainable materials in our most versatile collection.</p>
+        </div>
+
+        <div class="toolbar">
+            <div class="results-count" id="resultsCount">Showing 6 of 24 products</div>
+            <div class="toolbar-right">
+                <select class="sort-dropdown" id="sortDropdown" aria-label="Sort products">
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest First</option>
+                    <option value="rating">Best Rating</option>
+                </select>
+                <div class="view-toggle" role="group" aria-label="View toggle">
+                    <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                        <span class="icon-text">⊞</span>
+                    </button>
+                    <button class="view-btn" data-view="list" aria-label="List view">
+                        <span class="icon-text">☰</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid" role="main">
+            <article class="product-card" data-price="2850" data-rating="4.8" data-date="2024-01-15" data-product-id="urban-blazer">
+                <div class="product-image" style="background: linear-gradient(135deg, #D4AF8C, #E8C5A0);">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-blazer" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-blazer" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Minimalist Blazer</h3>
+                    <p class="product-description">Meticulously crafted blazer featuring clean lines, premium eco-friendly materials.</p>
+                    <div class="product-price">₹2,850 <span class="original-price">₹3,200</span></div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+                        <span class="rating-count">(127)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Sustainable</span>
+                        <span class="feature-tag">Modern Cut</span>
+                        <span class="feature-tag">Wrinkle Resistant</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-blazer" data-price="2850" aria-label="Add Urban Minimalist Blazer to cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="1800" data-rating="4.5" data-date="2024-02-01" data-product-id="urban-jacket">
+                <div class="product-image" style="background: linear-gradient(135deg, #8B4513, #DEB887);">
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-jacket" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-jacket" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Casual Jacket</h3>
+                    <p class="product-description">Street-inspired design with modern functionality. Perfect for everyday wear.</p>
+                    <div class="product-price">₹1,800</div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="4.5 out of 5 stars">★★★★☆</span>
+                        <span class="rating-count">(73)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Casual</span>
+                        <span class="feature-tag">Comfortable</span>
+                        <span class="feature-tag">Versatile</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-jacket" data-price="1800" aria-label="Add Urban Casual Jacket to cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="4500" data-rating="4.4" data-date="2024-01-20" data-product-id="urban-overcoat">
+                <div class="product-image" style="background: linear-gradient(135deg, #2F4F4F, #708090);">
+                    <div class="product-badge">LIMITED</div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-overcoat" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-overcoat" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Overcoat</h3>
+                    <p class="product-description">Premium outerwear designed for the modern urbanite. Weather-resistant and stylish.</p>
+                    <div class="product-price">₹4,500</div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="4.4 out of 5 stars">★★★★☆</span>
+                        <span class="rating-count">(68)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Weather-Resistant</span>
+                        <span class="feature-tag">Premium</span>
+                        <span class="feature-tag">Urban</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-overcoat" data-price="4500" aria-label="Add Urban Overcoat to cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="2100" data-rating="4.7" data-date="2024-02-10" data-product-id="urban-sweater">
+                <div class="product-image" style="background: linear-gradient(135deg, #483D8B, #6A5ACD);">
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-sweater" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-sweater" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Sweater</h3>
+                    <p class="product-description">Comfortable knitwear perfect for layering. Made from sustainable materials.</p>
+                    <div class="product-price">₹2,100</div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="4.7 out of 5 stars">★★★★★</span>
+                        <span class="rating-count">(118)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Comfort</span>
+                        <span class="feature-tag">Layering</span>
+                        <span class="feature-tag">Sustainable</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-sweater" data-price="2100" aria-label="Add Urban Sweater to cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="1950" data-rating="4.2" data-date="2024-02-15" data-product-id="urban-cargo">
+                <div class="product-image" style="background: linear-gradient(135deg, #556B2F, #8FBC8F);">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-cargo" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-cargo" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Cargo Pants</h3>
+                    <p class="product-description">Functional meets fashionable. Multiple pockets with contemporary styling.</p>
+                    <div class="product-price">₹1,950</div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="4.2 out of 5 stars">★★★★☆</span>
+                        <span class="rating-count">(85)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Functional</span>
+                        <span class="feature-tag">Pockets</span>
+                        <span class="feature-tag">Durable</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-cargo" data-price="1950" aria-label="Add Urban Cargo Pants to cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="2400" data-rating="4.9" data-date="2024-02-20" data-product-id="urban-hoodie">
+                <div class="product-image" style="background: linear-gradient(135deg, #2C3E50, #34495E);">
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" data-product="urban-hoodie" aria-label="Add to wishlist">
+                            <span class="icon-text">♡</span>
+                        </button>
+                        <button class="action-btn quick-view-btn" data-product="urban-hoodie" aria-label="Quick view">
+                            <span class="icon-text">👁</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Tech Hoodie</h3>
+                    <p class="product-description">Modern hoodie with tech-inspired details. Perfect for the digital nomad.</p>
+                    <div class="product-price">₹2,400</div>
+                    <div class="product-rating">
+                        <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                        <span class="rating-count">(156)</span>
+                    </div>
+                    <div class="product-features">
+                        <span class="feature-tag">Tech</span>
+                        <span class="feature-tag">Modern</span>
+                        <span class="feature-tag">Comfortable</span>
+                    </div>
+                    <button class="add-to-cart" data-product="urban-hoodie" data-price="2400" aria-label="Add Urban Tech Hoodie to cart">Add to Cart</button>
+                </div>
+            </article>
+        </div>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+            <button class="page-btn" id="prevPage" aria-label="Previous page">←</button>
+            <button class="page-btn active" data-page="1" aria-label="Page 1" aria-current="page">1</button>
+            <button class="page-btn" data-page="2" aria-label="Page 2">2</button>
+            <button class="page-btn" data-page="3" aria-label="Page 3">3</button>
+            <button class="page-btn" id="nextPage" aria-label="Next page">→</button>
+        </nav>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal" role="dialog" aria-labelledby="quickViewTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <div id="quickViewContent">
+                <!-- Quick view content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart notification -->
+    <div id="cartNotification" class="cart-notification" role="alert" aria-live="polite">
+        <span id="cartMessage"></span>
+    </div>
+
+    <script src="./assets/js/product-grid.js"></script>
+</body>
+</html>

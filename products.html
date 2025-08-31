@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxeon - Gen Z Clothing Brand</title>
+    <meta name="description" content="Discover the ultimate Gen Z clothing line! Trendy, bold, and effortlessly stylish. Your #1 destination for the latest fashion that defines your vibe">
+    <!-- Favicon -->
+    <link href="photos/google-gemini-icon.png" rel="icon" media="(prefers-color-scheme: light)">
+    <link href="photos/google-gemini-icon.png" rel="icon" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="https://framerusercontent.com/images/9jFUoQq7OgK96WJ59dy8SbCQ78I.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luxeon - Gen Z Clothing Brand">
+    <meta property="og:description" content="Discover the ultimate Gen Z clothing line! Trendy, bold, and effortlessly stylish. Your #1 destination for the latest fashion that defines your vibe">
+    <meta property="og:image" content="https://framerusercontent.com/images/dP5SPQdp2Xjg7YAdR9GvJXW93E.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxeon - Gen Z Clothing Brand">
+    <meta name="twitter:description" content="Discover the ultimate Gen Z clothing line! Trendy, bold, and effortlessly stylish. Your #1 destination for the latest fashion that defines your vibe">
+    <meta name="twitter:image" content="https://framerusercontent.com/images/dP5SPQdp2Xjg7YAdR9GvJXW93E.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/poducts.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">LUXEON +</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <button class="nav-icon" title="Search" onclick="toggleSearch()">🔍</button>
+                <button class="nav-icon" title="Wishlist" onclick="openWishlist()">
+                    ♡
+                    <span class="cart-badge" id="wishlist-count" style="display: none;">0</span>
+                </button>
+                <button class="nav-icon" title="Cart" onclick="openCart()">
+                    🛒
+                    <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                </button>
+                <button class="nav-icon" title="Account" onclick="openAccount()">👤</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <a href="#" class="logo">LUXEON +</a>
+                    <button class="mobile-nav-close" onclick="toggleMobileMenu()">✕</button>
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="#" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Collections</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Overview</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Features</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Contact</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">About us</a></li>
+                    <li><a href="#" onclick="closeMobileMenu()">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="index.html#collections">Collections</a> / <a href="product-grid.html">Urban Collection</a> / Urban Minimalist Blazer
+        </div>
+
+        <section class="product-section fade-in">
+            <div class="product-images">
+                <div class="main-image" id="mainImage">
+                    Premium Urban Blazer
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail active" data-image="front"></div>
+                    <div class="thumbnail" data-image="back"></div>
+                    <div class="thumbnail" data-image="detail"></div>
+                    <div class="thumbnail" data-image="styled"></div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Urban Minimalist Blazer</h1>
+                <div class="product-price">₹2,850 - ₹3,200</div>
+                
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-text">4.8 (127 reviews)</span>
+                </div>
+
+                <div class="product-tags">
+                    <span class="tag">NEW</span>
+                    <span class="tag">Sustainable</span>
+                    <span class="tag">Premium Quality</span>
+                </div>
+
+                <p class="product-description">
+                    Elevate your everyday wardrobe with this meticulously crafted urban blazer. Designed for the modern professional who values both style and sustainability, this piece features clean lines, premium eco-friendly materials, and versatile styling options that transition seamlessly from office to evening.
+                </p>
+
+                <div class="product-features">
+                    <ul class="features-list">
+                        <li><strong>Material:</strong> 65% Organic Cotton, 30% Recycled Polyester, 5% Elastane</li>
+                        <li><strong>Fit:</strong> Tailored, Modern Cut</li>
+                        <li><strong>Care:</strong> Machine Washable, Wrinkle Resistant</li>
+                        <li><strong>Origin:</strong> Ethically Sourced & Manufactured</li>
+                        <li><strong>Features:</strong> Functional Pockets, Structured Shoulders</li>
+                    </ul>
+                </div>
+
+                <div class="color-selector">
+                    <label class="size-label">Color</label>
+                    <div class="color-options">
+                        <div class="color-option color-beige selected" data-color="beige"></div>
+                        <div class="color-option color-navy" data-color="navy"></div>
+                        <div class="color-option color-black" data-color="black"></div>
+                        <div class="color-option color-grey" data-color="grey"></div>
+                    </div>
+                </div>
+
+                <div class="size-selector">
+                    <label class="size-label">Size</label>
+                    <div class="size-options">
+                        <div class="size-option" data-size="xs">XS</div>
+                        <div class="size-option" data-size="s">S</div>
+                        <div class="size-option selected" data-size="m">M</div>
+                        <div class="size-option" data-size="l">L</div>
+                        <div class="size-option" data-size="xl">XL</div>
+                        <div class="size-option" data-size="xxl">XXL</div>
+                    </div>
+                </div>
+
+                <div class="quantity-selector">
+                    <span class="quantity-label">Quantity:</span>
+                    <div class="quantity-input">
+                        <button class="quantity-btn" onclick="updateQuantity(-1)">−</button>
+                        <span class="quantity-value" id="quantity">1</span>
+                        <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                    <button class="btn-secondary" onclick="addToWishlist()">Add to Wishlist ♡</button>
+                </div>
+
+                <div class="shipping-info">
+                    <div class="shipping-item">
+                        <div class="shipping-icon">🚚</div>
+                        <div>
+                            <strong>Fast Delivery</strong><br>
+                            <small>Free shipping on orders above ₹2000</small>
+                        </div>
+                    </div>
+                    <div class="shipping-item">
+                        <div class="shipping-icon">↺</div>
+                        <div>
+                            <strong>Easy Returns</strong><br>
+                            <small>30-day return policy</small>
+                        </div>
+                    </div>
+                    <div class="shipping-item">
+                        <div class="shipping-icon">🛡️</div>
+                        <div>
+                            <strong>Quality Guarantee</strong><br>
+                            <small>Premium materials & craftsmanship</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-section">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="related-grid">
+                <div class="related-item">
+                    <div class="related-image">Minimalist Trousers</div>
+                    <div class="related-info">
+                        <h3 class="related-title">Essential Straight Trousers</h3>
+                        <div class="related-price">₹1,850 - ₹2,200</div>
+                    </div>
+                </div>
+                <div class="related-item">
+                    <div class="related-image">Statement Jacket</div>
+                    <div class="related-info">
+                        <h3 class="related-title">Bold Statement Jacket</h3>
+                        <div class="related-price">₹4,200 - ₹4,800</div>
+                    </div>
+                </div>
+                <div class="related-item">
+                    <div class="related-image">Urban Shirt</div>
+                    <div class="related-info">
+                        <h3 class="related-title">Classic Urban Shirt</h3>
+                        <div class="related-price">₹1,400 - ₹1,800</div>
+                    </div>
+                </div>
+                <div class="related-item">
+                    <div class="related-image">Casual Blazer</div>
+                    <div class="related-info">
+                        <h3 class="related-title">Weekend Casual Blazer</h3>
+                        <div class="related-price">₹2,400 - ₹2,900</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+    <script src="./assets/js/products.js"></script>
+</body>
+</html>

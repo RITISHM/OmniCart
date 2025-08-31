@@ -1,0 +1,32 @@
+# Node.js Modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
+.cache/
+*.swo

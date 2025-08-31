@@ -1,0 +1,38 @@
+<!-- Created login page structure with HTML boilerplate -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxeon | Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<!-- Added login form container and the layout -->
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>LUXEON</h1>
+        </div>
+        <!--Add form with email and password inputs-->
+        <form>
+            <div class="input-group">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+           <!-- Add sign-in button and supporting links -->
+            <a href="./index.html"><button type="submit" class="login-btn">Sign In</button></a>
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Create New Account</a>
+            </div>
+        </form>
+    </div>
+    <!-- Link login page JavaScript functionality -->
+    <script src="./assets/js/login.js"></script>
+</body>
+</html>
