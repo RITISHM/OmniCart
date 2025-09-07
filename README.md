@@ -1,7 +1,6 @@
 Below is the README file in full. Enjoy reading and interacting with the documentation!
 
-
-# OmniCart 🚀
+# [OmniCart 🚀](https://omnicart.netlify.app/)
 
 Welcome to **OmniCart** – an interactive, responsive, and feature-rich e-commerce web application built with pure HTML, CSS, and JavaScript. OmniCart is designed to offer a smooth shopping experience with dynamic product grids, intuitive mobile navigation, quick view modals, and streamlined cart management. Enjoy exploring the site and all it has to offer! 😊
 
@@ -24,19 +23,17 @@ Whether you’re a developer looking for an inspiring design or a shop owner wan
 
 Here’s a quick look at some of the standout features of OmniCart:
 
-| **Feature**                     | **Details**                                                                                                                                                           | **Emoji**  |
-|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| **Responsive Design**           | The layout adapts to any device, ensuring a delightful experience on desktops, tablets, and mobile phones.                                                              | 📱💻       |
-| **Interactive Product Grid**    | Engaging hover effects, animations, and clean products layout allow users to easily browse the latest products.                                                          | 🛍️         |
-| **Cart & Wishlist Management**  | Seamless management of shopping cart and wishlist items with real-time updates and notifications for actions like “Add to Cart” or “Add to Wishlist”.                | ❤️🛒       |
-| **Quick View Functionality**    | A modal popup provides detailed information about selected products, offering descriptions, pricing details, and more with a clean presentation.                     | 👁️         |
-| **Mobile Navigation**           | A mobile menu with toggle and smooth animations that prevent unwanted scrolling, offering enhanced accessibility on smaller screens.                                  | ☰🔄       |
-| **Price Calculation Details**   | Seamless price demonstrations including GST, shipping fees, and discount calculations ensure transparency in price breakdowns.                                          | 💸         |
-| **User Interaction Notifications** | Real-time notifications for important user actions (like adding a product) using dynamic messages and animations – ensuring users never miss a beat.                | 🔔         |
+| **Feature**                        | **Details**                                                                                                                                           | **Emoji** |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Responsive Design**              | The layout adapts to any device, ensuring a delightful experience on desktops, tablets, and mobile phones.                                            | 📱💻      |
+| **Interactive Product Grid**       | Engaging hover effects, animations, and clean products layout allow users to easily browse the latest products.                                       | 🛍️        |
+| **Cart & Wishlist Management**     | Seamless management of shopping cart and wishlist items with real-time updates and notifications for actions like “Add to Cart” or “Add to Wishlist”. | ❤️🛒      |
+| **Quick View Functionality**       | A modal popup provides detailed information about selected products, offering descriptions, pricing details, and more with a clean presentation.      | 👁️        |
+| **Mobile Navigation**              | A mobile menu with toggle and smooth animations that prevent unwanted scrolling, offering enhanced accessibility on smaller screens.                  | ☰🔄       |
+| **Price Calculation Details**      | Seamless price demonstrations including GST, shipping fees, and discount calculations ensure transparency in price breakdowns.                        | 💸        |
+| **User Interaction Notifications** | Real-time notifications for important user actions (like adding a product) using dynamic messages and animations – ensuring users never miss a beat.  | 🔔        |
 
 The source code carefully implements these features with dedicated modules for product management, UI effects (e.g., image zoom, hover, and quick view), and cart/wishlist operations. For example, the product grid and notification systems are clearly structured in the JavaScript files, ensuring maintainability and extensibility. fileciteturn0file2
-
-
 
 ## Usage
 
@@ -66,6 +63,7 @@ Getting started with OmniCart is simple and fun! Follow these steps to run and t
    - Enjoy detailed price breakdowns including tax and shipping info through dynamic UI elements. fileciteturn0file6
 
 Feel free to modify and extend the code. The repository structure is well-organized:
+
 - `assets/js/` – Contains JavaScript files handling the product grid, cart management, login functions, and more.
 - `assets/css/` – Houses the styling files that ensure a visually appealing experience.
 - HTML files like `index.html` and `aboutUs.html` provide various page templates.
@@ -91,8 +89,10 @@ For the full license text, please refer to the `LICENSE` file included in the re
 ---
 
 Happy coding and shopping! 🎉🛍️
+
 ```
 
 --------------------------------------------------
 
 This README provides an engaging and comprehensive overview of OmniCart while ensuring developers and users alike have all the necessary details to get started and enjoy the application. Enjoy your journey with OmniCart and have fun exploring all its features!
+```
