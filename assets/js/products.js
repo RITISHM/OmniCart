@@ -23,16 +23,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // ✅ Breadcrumb
     const breadcrumb = document.querySelector(".breadcrumb");
-    if (breadcrumb) {
-      breadcrumb.innerHTML = `
+
+    breadcrumb.innerHTML = `
         <a href="index.html">Home</a> /
         <a href="index.html#collections">Collections</a> /
-        <a href="product-grid.html">${
-          collection.charAt(0).toUpperCase() + collection.slice(1)
-        }</a> /
+        <a href="product-grid.html?collection=${collection}">${
+      collection.charAt(0).toUpperCase() + collection.slice(1) + " Collection"
+    }</a> /
         ${product.name}
       `;
-    }
 
     // ✅ Title & Price
     document.querySelector(".product-title").textContent = product.name;
@@ -47,8 +46,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       ".rating-text"
     ).textContent = `${product.rating} (${product.reviews} reviews)`;
     document.querySelector(".stars").textContent =
-      "★".repeat(Math.round(product.rating)) +
-      "☆".repeat(5 - Math.round(product.rating));
+      "★".repeat(Math.floor(product.rating)) +
+      "⯪".repeat(product.rating % 1 >= 0.5 ? 1 : 0) +
+      "☆".repeat(
+        5 - Math.floor(product.rating) - (product.rating % 1 >= 0.5 ? 1 : 0)
+      );
 
     // ✅ Tags
     const tagsContainer = document.querySelector(".product-tags");
@@ -118,10 +120,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       related = related.sort(() => 0.5 - Math.random()).slice(0, 3);
 
       related.forEach((relProd) => {
-        const relIndex = data.products[collection].indexOf(relProd);
         const item = document.createElement("div");
         item.classList.add("related-item");
-        item.innerHTML = `
+        item.innerHTML = ` 
       
             <img class="related-image" src="${
               relProd["image_main"] || "placeholder.jpg"
@@ -132,7 +133,11 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="related-info">
             <h3 class="related-title">${relProd.name}</h3>
             <div class="related-price">₹${relProd.price}</div>
-            <a href="products.html?collection=${collection}&id=${relIndex}" class="related-link">View</a>
+            <button class="related-item-btn" onclick="window.location.href='products.html?collection=${collection}&id=${
+          relProd.id - 1
+        }';">
+          View
+        </button>
           </div>
         `;
         relatedContainer.appendChild(item);
@@ -164,4 +169,32 @@ function addToCart() {
 function addToWishlist() {
   const productTitle = document.querySelector(".product-title").textContent;
   alert(`${productTitle} added to wishlist!`);
+}
+function onActiveThumbnailChange(newActiveElement, previousActiveElement) {
+  console.log("Active changed to:", newActiveElement.src);
+  // You can update main image, trigger animations, etc.
+}
+
+const observer = new MutationObserver((mutationsList) => {
+  for (const mutation of mutationsList) {
+    if (
+      mutation.type === "attributes" &&
+      mutation.attributeName === "class" &&
+      mutation.target.classList.contains("thumbnail")
+    ) {
+      if (mutation.target.classList.contains("active")) {
+        onActiveThumbnailChange(mutation.target);
+      }
+    }
+  }
+});
+
+document.querySelectorAll(".thumbnail").forEach((thumb) => {
+  observer.observe(thumb, { attributes: true });
+});
+
+function onActiveThumbnailChange(newActiveElement) {
+  const mainImage = document.getElementById("mainImage");
+  mainImage.src = newActiveElement.src;
+  // Add your logic here — update preview, trigger animation, etc.
 }

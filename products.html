@@ -65,7 +65,7 @@
       <div class="container">
         <div class="header-wrapper">
           <!-- Logo -->
-          <a href="#" class="logo">
+          <a href="index.html" class="logo">
             <span>LUXEON</span>
             <svg class="star-icon" width="17" height="18" viewBox="0 0 17 18">
               <path
@@ -77,13 +77,12 @@
 
           <!-- Desktop Navigation -->
           <nav class="desktop-nav">
-            <a href="#hero" class="nav-link">Home</a>
-            <a href="#collections" class="nav-link">Categories</a>
-            <a href="#about" class="nav-link">Overview</a>
-            <a href="#features" class="nav-link">Features</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="product-grid.html" class="nav-link active">Categories</a>
+            <a href="index.html#about" class="nav-link">Overview</a>
+            <a href="index.html#features" class="nav-link">Features</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
             <a href="aboutUs.html" class="nav-link">About us</a>
-
             <a href="login.html" class="nav-link">Login / Sign Up</a>
           </nav>
 
@@ -110,16 +109,19 @@
 
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="mobile-menu">
-          <a href="#hero" class="mobile-nav-link">Home</a>
-          <a href="#collections" class="mobile-nav-link">Categories</a>
-          <a href="#about" class="mobile-nav-link">About</a>
-          <a href="#features" class="mobile-nav-link">Features</a>
-          <a href="#contact" class="mobile-nav-link">Contact</a>
+          <a href="index.html" class="mobile-nav-link">Home</a>
+          <a href="index.html#collections" class="mobile-nav-link active"
+            >Collection</a
+          >
+          <a href="index.html#about" class="mobile-nav-link">About</a>
+          <a href="index.html#features" class="mobile-nav-link">Features</a>
+          <a href="index.html#contact" class="mobile-nav-link">Contact</a>
           <a href="aboutUs.html" class="mobile-nav-link">About Us</a>
           <a href="login.html" class="mobile-nav-link">Login / Sign Up</a>
         </div>
       </div>
     </header>
+    <br />
     <main class="container">
       <div class="breadcrumb">
         <a href="index.html">Home</a> /
@@ -130,13 +132,10 @@
       <!-- <div id="hero" class="hero></div> -->
       <section class="product-section fade-in">
         <div class="product-images">
-          <img
-            src=""
-            alt=""
-            class="main-image"
-            id="mainImage"
-            style="height: fit-content"
-          />
+          <div class="main-image">
+            <img src="" alt="" id="mainImage" />
+          </div>
+
           <div class="thumbnail-grid">
             <img class="thumbnail active" src="" alt="" />
             <img class="thumbnail" src="" alt="" />
@@ -419,5 +418,6 @@
       </div>
     </footer>
     <script src="./assets/js/products.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

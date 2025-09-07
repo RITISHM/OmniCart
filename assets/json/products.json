@@ -146,7 +146,7 @@
         "small_description": "Classic Plaid: Blue Haze shirt designed for versatile style and all-day comfort."
       }
     ],
-    "polo": [
+    "polos": [
       {
         "id": 1,
         "name": "Popcorn: Maroon",
@@ -292,5 +292,9 @@
         "small_description": "Classic Originals: Furious Dragon shirt designed for versatile style and all-day comfort."
       }
     ]
+  },
+  "collection_description": {
+    "shirts": "Street-ready structure for every scene. Tailored fits meet breathable fabrics in shirts built for movement and presence. From russet checks to bold solids, each piece adds quiet confidence to your daily rotation",
+    "polos": "Classic form, redefined for the now. Soft knits, textured stripes, and bold graphics come together in polos that balance comfort and edge. Designed to flex with your day, they’re your go-to for effortless impact"
   }
 }

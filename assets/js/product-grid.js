@@ -1,5 +1,6 @@
 // Product Grid JavaScript - Urban Collection
 let collection;
+let data = {};
 document.addEventListener("DOMContentLoaded", async function () {
   const urlParams = new URLSearchParams(window.location.search);
   collection = urlParams.get("collection");
@@ -23,6 +24,9 @@ class CollectionGrid {
 
   async init() {
     try {
+      const res = await fetch("./assets/json/products.json");
+      data = await res.json();
+      this.sethead();
       await this.loadProductData();
       this.bindEvents();
       this.sortProducts();
@@ -34,12 +38,6 @@ class CollectionGrid {
   }
 
   async loadProductData() {
-    // Urban collection products
-
-    // ✅ Correct file path
-    const res = await fetch("./assets/json/products.json");
-    const data = await res.json();
-
     if (!data.products[collection] || !data.products[collection]) {
       document.querySelector(
         ".product-section"
@@ -48,6 +46,17 @@ class CollectionGrid {
     }
 
     this.allProducts = data.products[collection];
+  }
+  sethead() {
+    const navLink = document.querySelectorAll("#breadcrumb-nav a");
+    navLink[2].href = `product-grid.html?collection=${collection}`;
+    navLink[2].innerHTML =
+      collection.charAt(0).toUpperCase() + collection.slice(1) + " Collection";
+    const heroHeader = document.querySelector(".hero-header h1");
+    heroHeader.innerHTML =
+      collection.charAt(0).toUpperCase() + collection.slice(1) + " Collection";
+    const heroDesc = document.querySelector(".hero-header p");
+    heroDesc.innerHTML = data.collection_description[collection];
   }
 
   bindEvents() {
@@ -160,33 +169,17 @@ class CollectionGrid {
 
     // Create star rating
     const fullStars = Math.floor(product.rating);
-    const hasHalfStar = product.rating % 1 >= 0.5;
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    const hasHalfStar = product.rating % 1 >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - hasHalfStar;
 
     const stars =
-      "★".repeat(fullStars) + (hasHalfStar ? "☆" : "") + "☆".repeat(emptyStars);
+      "★".repeat(fullStars) + "⯪".repeat(hasHalfStar) + "☆".repeat(emptyStars);
 
     productDiv.innerHTML = `
       <div class="product-item-image">
         <img src="${product.image_main}" alt="${product.name}" />
         ${badgeHtml}
-        <div class="product-item-actions">
-          <button class="product-action-btn" onclick="addToWishlist(${
-            product.id
-          })" title="Add to wishlist">
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-            </svg>
-          </button>
-          <button class="product-action-btn" onclick="quickView(${
-            product.id
-          })" title="Quick view">
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-            </svg>
-          </button>
-        </div>
+        
       </div>
       <div class="product-item-details">
         <h3 class="product-item-title">${product.name}</h3>
@@ -202,8 +195,10 @@ class CollectionGrid {
         <div class="product-features">
           ${tagsHtml}
         </div>
-        <button class="product-item-btn" onclick="addToCart(${product.id})">
-          Add to Cart
+        <button class="product-item-btn" onclick="window.location.href='products.html?collection=${collection}&id=${
+      product.id - 1
+    }';">
+          View
         </button>
       </div>
     `;
@@ -273,11 +268,6 @@ class CollectionGrid {
 }
 
 // Global functions for product interactions
-function addToCart(productId) {
-  // Show a simple notification
-  showNotification(`Product added to cart!`);
-  // Here you would implement actual cart functionality
-}
 
 function addToWishlist(productId) {
   // Show a simple notification
