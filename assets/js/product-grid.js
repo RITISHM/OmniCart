@@ -9,7 +9,7 @@ class CollectionGrid {
   constructor() {
     this.allProducts = [];
     this.displayedCount = 0;
-    this.productsPerPage = 6;
+    this.productsPerPage = 3;
     this.currentSort = "featured";
 
     this.productsGrid = document.getElementById("products-grid");
