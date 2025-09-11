@@ -173,7 +173,9 @@ h6 {
 .nav-link:hover {
   color: #777;
 }
-
+a.active {
+  font-weight: 650;
+}
 .mobile-menu-button {
   background: none;
   border: none;

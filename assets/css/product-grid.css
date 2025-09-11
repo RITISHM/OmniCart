@@ -184,9 +184,18 @@
 /* Products Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.products-grid.list-view {
+  display: block;
+}
+
+.products-grid.list-view .product-item {
+  margin-bottom: 2rem;
 }
 
 .product-item {

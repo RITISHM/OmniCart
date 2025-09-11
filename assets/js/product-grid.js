@@ -78,11 +78,22 @@ class CollectionGrid {
 
     // View toggle buttons
     const viewButtons = document.querySelectorAll(".view-btn");
+    const productsGrid = document.querySelector(".products-grid");
+
     viewButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
+        // Remove active class from all buttons
         viewButtons.forEach((b) => b.classList.remove("active"));
+        // Add active class to clicked button
         e.target.closest(".view-btn").classList.add("active");
-        // Here you could implement different view layouts
+
+        // Toggle grid/list view
+        const selectedView = btn.getAttribute("data-view");
+        if (selectedView === "list") {
+          productsGrid.classList.add("list-view");
+        } else {
+          productsGrid.classList.remove("list-view");
+        }
       });
     });
   }
@@ -273,12 +284,6 @@ function addToWishlist(productId) {
   // Show a simple notification
   showNotification(`Product added to wishlist!`);
   // Here you would implement actual wishlist functionality
-}
-
-function quickView(productId) {
-  // Show a simple notification
-  showNotification(`Quick view coming soon!`);
-  // Here you would implement quick view modal
 }
 
 function showNotification(message) {
