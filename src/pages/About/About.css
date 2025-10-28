@@ -1,0 +1,44 @@
+.about-page {
+  padding-top: 6rem;
+  min-height: 100vh;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: var(--color-gray);
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-gray-dark);
+}
+
+.about-hero p {
+  font-size: 1.25rem;
+  color: var(--color-gray-medium);
+}
+
+.about-content {
+  padding: 4rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-gray-dark);
+}
+
+.about-section p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-gray-medium);
+  margin-bottom: 1rem;
+}

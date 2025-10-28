@@ -1,0 +1,420 @@
+{
+  "products": {
+    "shirts": [
+      {
+        "id": 1,
+        "name": "Solids: Brown",
+        "category": "Shirts",
+        "price": 1799,
+        "image_main": "./assets/images/Shirts/1.1.avif",
+        "image-2": "./assets/images/Shirts/1.2.avif",
+        "image-3": "./assets/images/Shirts/1.3.avif",
+        "image-4": "./assets/images/Shirts/1.4.avif",
+        "badge": "TRENDING",
+        "description": "Style your wardrobe with this classic piece. This well-fitted, comfortable shirt is stitched to perfection. Wear it to a casual workday, party, or for a night-in with your friends - this shirt is the universal answer to \"What should I wear today?\".",
+        "inStock": true,
+        "fit": "Utility Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Premium Comfort",
+        "tags": [
+          "Classic",
+          "Slim Fit",
+          "Lightweight"
+        ],
+        "date": "2023-10-16",
+        "rating": 4.6,
+        "reviews": 212,
+        "featured": false,
+        "small_description": "Classic Solids: Brown shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 2,
+        "name": "Originals: Russet",
+        "category": "Shirts",
+        "price": 1499,
+        "image_main": "./assets/images/Shirts/2.1.avif",
+        "image-2": "./assets/images/Shirts/2.2.avif",
+        "image-3": "./assets/images/Shirts/2.3.avif",
+        "image-4": "./assets/images/Shirts/2.4.avif",
+        "badge": "TRENDING",
+        "description": "Double the trouble, double the fun! Shackets are the ultimate layering piece, combining the warmth of a shirt with the lightness of a jacket. Perfect for those in-between weather days!",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Sustainable Cotton",
+        "tags": [
+          "Sustainable",
+          "Slim Fit",
+          "Lightweight"
+        ],
+        "date": "2023-01-30",
+        "rating": 4.1,
+        "reviews": 255,
+        "featured": true,
+        "small_description": "Classic Originals: Russet shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 3,
+        "name": "Solids: Navy",
+        "category": "Shirts",
+        "price": 1799,
+        "image_main": "./assets/images/Shirts/3.1.avif",
+        "image-2": "./assets/images/Shirts/3.2.avif",
+        "image-3": "./assets/images/Shirts/3.3.avif",
+        "image-4": "./assets/images/Shirts/3.4.avif",
+        "badge": "TRENDING",
+        "description": "It's a modern twist on a classic piece! This utility shirt mixes style and functionality, making it a must-have for you fashion lovers.",
+        "inStock": true,
+        "fit": "Utility Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Soft Touch Finish",
+        "tags": [
+          "Trendy",
+          "Streetwear",
+          "Classic"
+        ],
+        "date": "2024-01-02",
+        "rating": 3.8,
+        "reviews": 391,
+        "featured": false,
+        "small_description": "Classic Solids: Navy shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 4,
+        "name": "Plaid: Blue And White",
+        "category": "Shirts",
+        "price": 1499,
+        "image_main": "./assets/images/Shirts/4.1.avif",
+        "image-2": "./assets/images/Shirts/4.2.avif",
+        "image-3": "./assets/images/Shirts/4.3.avif",
+        "image-4": "./assets/images/Shirts/4.4.avif",
+        "badge": "TRENDING",
+        "description": "Plaid meets chill in the best way. This button-up shirt blends blue, white, and brown checks for a fresh, laid-back vibe. Rolled sleeves and a relaxed fit make it perfect for layering or solo wear, while the light pink cap adds a playful twist. Whether you're lounging or out on the move, this look nails effortless cool with a touch of personality.",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Soft Touch Finish",
+        "tags": [
+          "Streetwear",
+          "Slim Fit",
+          "Casual"
+        ],
+        "date": "2024-04-29",
+        "rating": 3.8,
+        "reviews": 171,
+        "featured": true,
+        "small_description": "Classic Plaid: Blue And White shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 5,
+        "name": "Dark Topaz (Plaid)",
+        "category": "Shirts",
+        "price": 1699,
+        "image_main": "./assets/images/Shirts/5.1.avif",
+        "image-2": "./assets/images/Shirts/5.2.avif",
+        "image-3": "./assets/images/Shirts/5.3.avif",
+        "image-4": "./assets/images/Shirts/5.4.avif",
+        "badge": "TRENDING",
+        "description": "Plaid, bold, and ready to roll! This button-up plaid T-shirt brings the best of laid-back style and everyday comfort. With its rolled sleeves, chest pocket, and rugged check pattern, it\u2019s your go-to for effortless layering and off-duty cool. Whether you're heading out or kicking back, this shirt does the heavy lifting\u2014style and ease, all in one.",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Stretchable Fabric",
+        "tags": [
+          "Modern",
+          "Lightweight",
+          "Wrinkle Free"
+        ],
+        "date": "2024-04-25",
+        "rating": 4.2,
+        "reviews": 200,
+        "featured": false,
+        "small_description": "Classic Dark Topaz (Plaid) shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 6,
+        "name": "Plaid: Blue Haze",
+        "category": "Shirts",
+        "price": 1799,
+        "image_main": "./assets/images/Shirts/6.1.avif",
+        "image-2": "./assets/images/Shirts/6.2.avif",
+        "image-3": "./assets/images/Shirts/6.3.avif",
+        "image-4": "./assets/images/Shirts/6.4.avif",
+        "badge": "TRENDING",
+        "description": "Function meets flair\u2014hello, utility pocket! This plaid button-up shirt brings a bold mix of blue, white, and red checks, layered effortlessly over a crisp white tee. The standout feature? A utility chest pocket that adds both style and substance. Rolled sleeves and a relaxed fit keep things casual, while the clean lines and confident smile seal the look with personality. Ideal for everyday wear with a touch of practical edge.",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Stretchable Fabric",
+        "tags": [
+          "Sustainable",
+          "Lightweight",
+          "Classic"
+        ],
+        "date": "2023-08-03",
+        "rating": 3.9,
+        "reviews": 194,
+        "featured": false,
+        "small_description": "Classic Plaid: Blue Haze shirt designed for versatile style and all-day comfort."
+      }
+    ],
+    "polos": [
+      {
+        "id": 1,
+        "name": "Popcorn: Maroon",
+        "category": "Polo",
+        "price": 1049,
+        "image_main": "./assets/images/Polo/1.1.avif",
+        "image-2": "./assets/images/Polo/1.2.avif",
+        "image-3": "./assets/images/Polo/1.3.avif",
+        "image-4": "./assets/images/Polo/1.4.avif",
+        "badge": "TRENDING",
+        "description": "Texture that talks. This burgundy zip polo shirt brings a refined twist to casual wear with its standout popcorn-textured fabric. The short sleeves and sleek zip collar add a modern edge, while the deep color pairs effortlessly with neutrals like white or beige. Lightweight yet structured, it\u2019s the kind of piece that elevates your everyday without trying too hard.",
+        "inStock": true,
+        "fit": "Regular Fit",
+        "material": "60:40 Cotton Poly Melange",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Wrinkle Resistant",
+        "tags": [
+          "Trendy",
+          "Classic",
+          "Modern Cut"
+        ],
+        "date": "2023-08-21",
+        "rating": 5.0,
+        "reviews": 476,
+        "featured": false,
+        "small_description": "Stylish Popcorn: Maroon polo that blends comfort with a modern edge."
+      },
+      {
+        "id": 2,
+        "name": "Solids: Camel Brown",
+        "category": "Polo",
+        "price": 999,
+        "image_main": "./assets/images/Polo/2.1.avif",
+        "image-2": "./assets/images/Polo/2.2.avif",
+        "image-3": "./assets/images/Polo/2.3.avif",
+        "image-4": "./assets/images/Polo/2.4.avif",
+        "badge": "TRENDING",
+        "description": "This polo's got your back (and style game) covered. Crafted from breathable fabric that's soft as a summer breeze, it keeps you comfy all day long. Time to look and feel awesome!",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "56% Cotton 40% Polyester 4% Elastane",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Quick Dry",
+        "tags": [
+          "Lightweight",
+          "Trendy",
+          "Modern Cut"
+        ],
+        "date": "2023-08-18",
+        "rating": 4.9,
+        "reviews": 298,
+        "featured": true,
+        "small_description": "Stylish Solids: Camel Brown polo that blends comfort with a modern edge."
+      },
+      {
+        "id": 3,
+        "name": "Textured Stripes: Riviera",
+        "category": "Polo",
+        "price": 1499,
+        "image_main": "./assets/images/Polo/3.1.avif",
+        "image-2": "./assets/images/Polo/3.2.avif",
+        "image-3": "./assets/images/Polo/3.3.avif",
+        "image-4": "./assets/images/Polo/3.4.avif",
+        "badge": "TRENDING",
+        "description": "This polo's got your back (and style game) covered. Crafted from breathable fabric that's soft as a summer breeze, it keeps you comfy all day long. Time to look and feel awesome!",
+        "inStock": true,
+        "fit": "Utility Fit",
+        "material": "100% Cotton",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Quick Dry",
+        "tags": [
+          "Streetwear",
+          "Sustainable",
+          "Classic"
+        ],
+        "date": "2024-03-03",
+        "rating": 4.6,
+        "reviews": 402,
+        "featured": true,
+        "small_description": "Stylish Textured Stripes: Riviera polo that blends comfort with a modern edge."
+      },
+      {
+        "id": 4,
+        "name": "Naruto Shippuden: Team Seven",
+        "category": "Polo",
+        "price": 1299,
+        "image_main": "./assets/images/Polo/4.1.avif",
+        "image-2": "./assets/images/Polo/4.2.avif",
+        "image-3": "./assets/images/Polo/4.3.avif",
+        "image-4": "./assets/images/Polo/4.4.avif",
+        "badge": "TRENDING",
+        "description": "The Sharingan's legacy is never forgotten! Designed for those who appreciate lounging around in style, these tees are a wardrobe essential. Perfect for any occasion, from casual outings to chilling at home, these tees are your new go-to's.",
+        "inStock": true,
+        "fit": "Relaxed Fit",
+        "material": "95% Cotton 5% Elastane",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Breathable Fabric",
+        "tags": [
+          "Sustainable",
+          "Trendy",
+          "Lightweight"
+        ],
+        "date": "2023-08-03",
+        "rating": 3.8,
+        "reviews": 267,
+        "featured": false,
+        "small_description": "Stylish Naruto Shippuden: Team Seven polo that blends comfort with a modern edge."
+      },
+      {
+        "id": 5,
+        "name": "One Piece: Pirates",
+        "category": "Shirts",
+        "price": 1299,
+        "image_main": "./assets/images/Polo/5.1.avif",
+        "image-2": "./assets/images/Polo/5.2.avif",
+        "image-3": "./assets/images/Polo/5.3.avif",
+        "image-4": "./assets/images/Polo/5.4.avif",
+        "badge": "TRENDING",
+        "description": "Set sail in style with the ultimate fan-favorite fit! This oversized One Piece polo is crafted from premium heavy gauge fabric, built for comfort and bold expression. With its two-tone design and iconic skull logo front and back, it\u2019s perfect for laid-back days, anime marathons, or turning heads on the street. Whether you're repping your crew or just vibing solo, this polo\u2019s got your back\u2014literally.",
+        "inStock": true,
+        "fit": "OVersize Fit",
+        "material": "Premium Heavy Gauge Fabric (100% Cotton)",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Quick Dry",
+        "tags": [
+          "Trendy",
+          "Classic",
+          "Casual"
+        ],
+        "date": "2023-02-17",
+        "rating": 4.2,
+        "reviews": 165,
+        "featured": true,
+        "small_description": "Classic One Piece: Pirates shirt designed for versatile style and all-day comfort."
+      },
+      {
+        "id": 6,
+        "name": "Originals: Furious Dragon",
+        "category": "Shirts",
+        "price": 1299,
+        "image_main": "./assets/images/Polo/6.1.avif",
+        "image-2": "./assets/images/Polo/6.2.avif",
+        "image-3": "./assets/images/Polo/6.3.avif",
+        "image-4": "./assets/images/Polo/6.4.avif",
+        "badge": "TRENDING",
+        "description": "This cream polo with deep green accents is crafted from premium heavy gauge fabric for all-day comfort. The back\u2019s bold dragon graphic and vertical script fuse tradition with streetwear edge\u2014perfect for chill days or standout looks. It\u2019s more than a tee\u2014it\u2019s your signature.",
+        "inStock": true,
+        "fit": "OVersize Fit",
+        "material": "Premium Heavy Gauge Fabric (100% Cotton)",
+        "care": "Machine Wash",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "key_feature": "Moisture Wicking",
+        "tags": [
+          "Eco-friendly",
+          "Modern Cut",
+          "Classic"
+        ],
+        "date": "2023-01-16",
+        "rating": 4.2,
+        "reviews": 241,
+        "featured": true,
+        "small_description": "Classic Originals: Furious Dragon shirt designed for versatile style and all-day comfort."
+      }
+    ]
+  },
+  "collection_description": {
+    "shirts": "Street-ready structure for every scene. Tailored fits meet breathable fabrics in shirts built for movement and presence. From russet checks to bold solids, each piece adds quiet confidence to your daily rotation",
+    "polos": "Classic form, redefined for the now. Soft knits, textured stripes, and bold graphics come together in polos that balance comfort and edge. Designed to flex with your day, they’re your go-to for effortless impact"
+  }
+}

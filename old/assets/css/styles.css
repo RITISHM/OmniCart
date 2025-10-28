@@ -54,6 +54,7 @@ a {
 ul {
   list-style: none;
 }
+
 /* Add container and section spacing utilities*/
 .container {
   width: 100%;
@@ -73,6 +74,7 @@ h6 {
   font-weight: 700;
   line-height: 1.2;
 }
+
 .logo-icon {
   margin-left: 0.5rem;
   width: 1.5rem;
@@ -173,9 +175,11 @@ h6 {
 .nav-link:hover {
   color: #777;
 }
+
 a.active {
   font-weight: 650;
 }
+
 .mobile-menu-button {
   background: none;
   border: none;
@@ -989,6 +993,7 @@ a.active {
   .contact-wrapper {
     flex-direction: row;
   }
+
   .footer-grid {
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
