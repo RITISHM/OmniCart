@@ -58,7 +58,7 @@ ul {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
 /* Typography */
@@ -71,14 +71,32 @@ h6 {
   font-family: var(--font-montserrat);
   font-weight: 700;
   line-height: 1.2;
+  color: var(--color-gray-dark);
 }
 
-/* Buttons - Exact copy from original */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 0.875rem 2rem;
   font-family: var(--font-montserrat);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9375rem;
   text-align: center;
   border-radius: var(--radius-md);
   transition: var(--transition);
@@ -86,43 +104,48 @@ h6 {
   text-decoration: none;
   width: auto;
   white-space: nowrap;
+  border: none;
 }
 
 .btn:focus {
   outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
   background-color: var(--color-black);
   color: var(--color-white);
-  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #333;
+  background-color: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--color-black);
-  border: 1px solid var(--color-black);
+  border: 2px solid var(--color-black);
 }
 
 .btn-outline:hover {
   background-color: var(--color-black);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 .btn-outline-dark {
   background-color: transparent;
   color: var(--color-black);
   border: 2px solid var(--color-black);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn-outline-dark:hover {
   background-color: var(--color-black);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 /* Animations - Exact copy from original */
@@ -134,12 +157,43 @@ h6 {
 /* Media Queries */
 @media (min-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 2rem;
+    padding: 0 2.5rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
   }
 }

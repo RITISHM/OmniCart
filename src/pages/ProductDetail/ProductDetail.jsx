@@ -132,9 +132,13 @@ const ProductDetail = () => {
     <div className="product-detail-page" key={`${collection}-${id}`}>
       <div className="container">
         <nav className="breadcrumb">
-          <Link to="/">Home</Link> /
-          <Link to={`/collections/${collection}`}>Collections</Link> /
-          <span>{product.name}</span>
+          <Link to="/">Home</Link>
+          <span className="breadcrumb-separator">/</span>
+          <Link to={`/collections/${collection}`}>
+            {collection.charAt(0).toUpperCase() + collection.slice(1)}
+          </Link>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{product.name}</span>
         </nav>
 
         <div className="product-detail">
@@ -430,34 +434,33 @@ const ProductDetail = () => {
             <h2>You Might Also Like</h2>
             <div className="related-products-grid">
               {relatedProducts.map((relatedProduct) => (
-                <div key={relatedProduct.id} className="related-product-item">
-                  <Link 
-                    to={`/product/${collection}/${relatedProduct.id}`}
-                    onClick={() => {
-                      // Force page refresh for same-route navigation
-                      window.scrollTo(0, 0);
-                    }}
-                  >
-                    <div className="related-product-image">
-                      <img src={relatedProduct.image_main} alt={relatedProduct.name} />
-                      {relatedProduct.badge && (
-                        <div className={`product-badge ${relatedProduct.badge.toLowerCase()}`}>
-                          {relatedProduct.badge}
-                        </div>
-                      )}
-                    </div>
-                    <div className="related-product-info">
-                      <h4>{relatedProduct.name}</h4>
-                      <div className="related-product-price">
-                        ₹{relatedProduct.price.toLocaleString()}
+                <Link 
+                  key={relatedProduct.id}
+                  to={`/product/${collection}/${relatedProduct.id}`}
+                  className="related-product-item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <div className="related-product-image">
+                    <img src={relatedProduct.image_main} alt={relatedProduct.name} />
+                    {relatedProduct.badge && (
+                      <div className={`product-badge ${relatedProduct.badge.toLowerCase()}`}>
+                        {relatedProduct.badge}
                       </div>
-                      <div className="related-product-rating">
-                        <span className="stars">{createStarRating(relatedProduct.rating)}</span>
-                        <span className="rating-count">({relatedProduct.reviews})</span>
-                      </div>
+                    )}
+                  </div>
+                  <div className="related-product-info">
+                    <h4>{relatedProduct.name}</h4>
+                    <div className="related-product-price">
+                      ₹{relatedProduct.price.toLocaleString()}
                     </div>
-                  </Link>
-                </div>
+                    <div className="related-product-rating">
+                      <span className="stars">{createStarRating(relatedProduct.rating)}</span>
+                      <span className="rating-count">({relatedProduct.reviews})</span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

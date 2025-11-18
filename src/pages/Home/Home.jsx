@@ -18,7 +18,7 @@ const Home = () => {
 
     // Scroll-triggered animations
     const animateElements = document.querySelectorAll('.animate-in, .product-card, .feature-card, .testimonial-card');
-    
+
     const animateOnScroll = () => {
       animateElements.forEach((element) => {
         if (isElementInViewport(element)) {
@@ -41,7 +41,7 @@ const Home = () => {
 
     // Initial check
     animateOnScroll();
-    
+
     // Add scroll listener
     window.addEventListener('scroll', animateOnScroll);
 
@@ -118,10 +118,10 @@ const Home = () => {
                 Define Your Style. <br />
                 <span>Express Your Vibe.</span>
               </h1>
-              <p class="hero-description animate-in">
-              Discover cutting-edge fashion designed for the new generation.
-              Bold, authentic, and unmistakably you.
-            </p>
+              <p className="hero-description animate-in">
+                Discover cutting-edge fashion designed for the new generation.
+                Bold, authentic, and unmistakably you.
+              </p>
               <div className="hero-buttons animate-in">
                 <a href="#collections" className="btn btn-primary">
                   Shop Collection
@@ -231,8 +231,8 @@ const Home = () => {
           </div>
 
           <div className="section-footer">
-            <button 
-              onClick={toggleCollections} 
+            <button
+              onClick={toggleCollections}
               className="btn btn-outline-dark"
             >
               {showAllCollections ? 'View Less' : 'View All Collections'}

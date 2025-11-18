@@ -72,6 +72,7 @@ const ProductGrid = () => {
     
     // Update products state with sorted products
     setProducts(sortedProducts);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products.length, currentSort, productsPerPage]);
 
   // Load products when collection changes

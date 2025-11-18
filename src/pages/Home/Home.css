@@ -1,34 +1,47 @@
-/* Hero Section - Exact copy from original styles.css */
+/* Hero Section */
 .hero {
-  padding-top: 7rem;
+  padding-top: 6rem;
   padding-bottom: 4rem;
-  background-color: var(--color-gray);
+  background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-gray) 100%);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-wrapper {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .hero-content {
   text-align: center;
+  flex: 1;
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  color: var(--color-gray-dark);
+  font-weight: 800;
+}
+
+.hero-title span {
+  color: var(--color-black);
+  display: block;
+  margin-top: 0.375rem;
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   margin-bottom: 2rem;
   max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
-  color: var(--color-gray-dark);
+  line-height: 1.7;
+  color: var(--color-gray-medium);
 }
 
 .hero-buttons {
@@ -43,23 +56,28 @@
   position: relative;
   width: 100%;
   max-width: 30rem;
+  flex: 1;
 }
 
 .hero-image img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .hero-badge {
   position: absolute;
-  bottom: -1.25rem;
-  left: -1.25rem;
+  bottom: 1rem;
+  left: 1rem;
   background-color: var(--color-white);
-  padding: 1rem;
+  padding: 0.75rem 1.25rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
-  display: none;
+  display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .hero-badge-dot {
@@ -67,18 +85,30 @@
   height: 0.75rem;
   border-radius: 50%;
   background-color: var(--color-black);
-  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .hero-badge p {
   font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
 /* Collections Section */
 .collections {
-  padding: 4rem 0;
+  padding: 5rem 0;
+  background-color: var(--color-white);
 }
 
 .section-header {
@@ -87,14 +117,18 @@
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-bottom: 1rem;
+  color: var(--color-gray-dark);
+  font-weight: 800;
 }
 
 .section-description {
-  max-width: 36rem;
+  max-width: 38rem;
   margin: 0 auto;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
+  color: var(--color-gray-medium);
+  line-height: 1.7;
 }
 
 .collections-grid {
@@ -107,23 +141,31 @@
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  border: 1px solid var(--color-border);
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--color-gray-dark);
 }
 
 .product-image {
   position: relative;
+  overflow: hidden;
 }
 
 .product-image img {
   width: 100%;
-  height: 20rem;
+  height: 22rem;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
 }
 
 .product-badge {
@@ -145,7 +187,7 @@
 
 .product-title {
   font-family: var(--font-montserrat);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--color-gray-dark);
@@ -200,24 +242,28 @@
 
 /* About Section */
 .about {
-  padding: 4rem 0;
+  padding: 5rem 0;
   background-color: var(--color-gray-light);
 }
 
 .about-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
+  align-items: center;
 }
 
 .about-image {
   flex: 1;
+  width: 100%;
 }
 
 .about-image img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .about-content {
@@ -226,17 +272,17 @@
 
 .about-title {
   font-family: var(--font-montserrat);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1.75rem;
   color: var(--color-gray-dark);
 }
 
 .about-description {
   margin-bottom: 1.5rem;
-  font-size: 1.125rem;
-  color: var(--color-gray-dark);
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  color: var(--color-gray-medium);
+  line-height: 1.7;
 }
 
 .about-buttons {
@@ -244,12 +290,13 @@
   flex-direction: column;
   gap: 1rem;
   max-width: 24rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 /* Features Section */
 .features {
-  padding: 4rem 0;
+  padding: 5rem 0;
+  background-color: var(--color-white);
 }
 
 .features-grid {
@@ -259,34 +306,48 @@
 }
 
 .feature-card {
-  background-color: var(--color-white);
-  padding: 2rem;
+  background-color: var(--color-gray-light);
+  padding: 2.5rem 2rem;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   text-align: center;
   transition: var(--transition);
+  border: 1px solid transparent;
 }
 
 .feature-card:hover {
   box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+  border-color: var(--color-border);
+  background-color: var(--color-white);
 }
 
 .feature-icon {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .feature-title {
   font-family: var(--font-montserrat);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
   color: var(--color-gray-dark);
 }
 
 .feature-description {
   color: var(--color-gray-medium);
+  line-height: 1.65;
+  font-size: 0.9375rem;
 }
 
 /* Media Queries - Consolidated */
@@ -310,12 +371,16 @@
 
 @media (min-width: 768px) {
   .hero {
-    padding-top: 8rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 4.5rem;
   }
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.25rem;
+  }
+
+  .hero-description {
+    font-size: 1.1875rem;
   }
 
   .hero-badge {
@@ -323,29 +388,54 @@
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+  }
+
+  .section-description {
+    font-size: 1.125rem;
+  }
+
+  .product-title {
+    font-size: 1.25rem;
   }
 
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .instagram-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .instagram-image {
+    height: 15rem;
+  }
+
+  .cta-title {
+    font-size: 2.75rem;
+  }
+
+  .newsletter-form {
+    flex-direction: row;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-wrapper {
     flex-direction: row;
+    gap: 4rem;
   }
 
   .hero-content {
@@ -359,36 +449,64 @@
 
   .hero-buttons {
     margin: 0;
+    max-width: none;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
   }
 
   .collections-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
   }
 
   .about-wrapper {
     flex-direction: row;
+    gap: 4rem;
   }
 
   .features-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
   }
 
   .testimonials-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
   .instagram-grid {
     grid-template-columns: repeat(6, 1fr);
   }
+
+  .instagram-image {
+    height: 11rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 3.25rem;
+  }
+
+  .cta-title {
+    font-size: 3rem;
+  }
 }
 
 /* Testimonials Section */
 .testimonials {
-  padding: 4rem 0;
+  padding: 5rem 0;
+  background-color: var(--color-gray-light);
 }
 
 .testimonials-grid {
@@ -398,23 +516,32 @@
 }
 
 .testimonial-card {
-  background-color: var(--color-gray-light);
-  padding: 2rem;
+  background-color: var(--color-white);
+  padding: 2.5rem;
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
 }
 
 .testimonial-header {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .testimonial-avatar {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 1rem;
+  border: 2px solid var(--color-border);
 }
 
 .testimonial-info {
@@ -425,127 +552,158 @@
   font-family: var(--font-montserrat);
   font-weight: 700;
   color: var(--color-gray-dark);
-  margin: 0;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.0625rem;
 }
 
 .testimonial-stars {
   display: flex;
+  gap: 0.25rem;
   margin-top: 0.25rem;
 }
 
 .star {
-  width: 1rem;
-  height: 1rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
   fill: var(--color-yellow);
 }
 
 .testimonial-text {
-  color: var(--color-gray-dark);
-  line-height: 1.6;
+  color: var(--color-gray-medium);
+  line-height: 1.7;
+  font-size: 0.9375rem;
 }
 
 /* Instagram Section */
 .instagram {
-  padding: 4rem 0;
-  background-color: var(--color-gray-light);
+  padding: 5rem 0;
+  background-color: var(--color-white);
 }
 
 .instagram-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .instagram-image {
   width: 100%;
-  height: 12rem;
+  height: 14rem;
   object-fit: cover;
   border-radius: var(--radius-md);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.instagram-image:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
 }
 
 .instagram-footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .instagram-link {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-montserrat);
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
   color: var(--color-gray-dark);
   text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
 }
 
 .instagram-link:hover {
-  text-decoration: underline;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .instagram-link svg {
-  margin-left: 0.25rem;
+  transition: transform 0.3s ease;
+}
+
+.instagram-link:hover svg {
+  transform: translateX(5px);
 }
 
 /* CTA Banner */
 .cta-banner {
-  padding: 5rem 0;
-  background-color: var(--color-black);
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-dark) 100%);
   color: var(--color-white);
   text-align: center;
 }
 
 .cta-title {
   font-family: var(--font-montserrat);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
 }
 
 .cta-description {
-  max-width: 36rem;
+  max-width: 38rem;
   margin: 0 auto 2.5rem;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .newsletter-container {
-  max-width: 32rem;
+  max-width: 36rem;
   margin: 0 auto;
 }
 
 .newsletter-form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .newsletter-input {
   flex-grow: 1;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
   border-radius: var(--radius-md);
-  border: none;
+  border: 2px solid transparent;
   font-family: var(--font-inter);
   font-size: 1rem;
+  transition: var(--transition);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-white);
 }
 
 .newsletter-button {
   background-color: var(--color-white);
   color: var(--color-black);
   font-family: var(--font-montserrat);
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: var(--transition);
+  font-size: 1rem;
 }
 
 .newsletter-button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-gray-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .newsletter-disclaimer {
   font-size: 0.875rem;
-  color: var(--color-gray-medium);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
 }
 
