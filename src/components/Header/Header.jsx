@@ -6,6 +6,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -13,6 +14,21 @@ const Header = () => {
     // Check login status
     const loggedIn = localStorage.getItem('isLoggedIn');
     setIsLoggedIn(!!loggedIn);
+    
+    // Update cart count
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      setCartCount(cart.length);
+    };
+    
+    updateCartCount();
+    
+    // Listen for storage changes
+    window.addEventListener('storage', updateCartCount);
+    
+    return () => {
+      window.removeEventListener('storage', updateCartCount);
+    };
   }, [location]);
 
   const toggleMobileMenu = () => {
@@ -185,6 +201,17 @@ const Header = () => {
               About
             </Link>
             <div className="nav-divider"></div>
+            <Link 
+              to="/cart" 
+              className={`nav-link cart-link ${location.pathname === '/cart' ? 'active' : ''}`}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+            </Link>
             {isLoggedIn ? (
               <Link 
                 to="/profile" 
@@ -294,6 +321,13 @@ const Header = () => {
             onClick={closeMobileMenu}
           >
             About
+          </Link>
+          <Link 
+            to="/cart" 
+            className={`mobile-nav-link ${location.pathname === '/cart' ? 'active' : ''}`}
+            onClick={closeMobileMenu}
+          >
+            Cart {cartCount > 0 && `(${cartCount})`}
           </Link>
           {isLoggedIn ? (
             <Link 

@@ -1,6 +1,6 @@
-# OmniCart - Gen Z Clothing Brand
+# OmniCart - Gen Z Clothing Brand 🛍️
 
-A modern, full-stack e-commerce web application built with React.js and Node.js. OmniCart offers a seamless shopping experience with user authentication, dynamic product displays, and MongoDB integration.
+A modern, full-stack e-commerce web application built with React 18, Vite, and Node.js. OmniCart delivers a lightning-fast shopping experience with user authentication, dynamic product displays, toast notifications, and MongoDB integration.
 
 ## 🚀 Features
 
@@ -10,18 +10,22 @@ A modern, full-stack e-commerce web application built with React.js and Node.js.
 - **Dynamic Product Grid**: Interactive product displays with filtering and sorting
 - **Product Collections**: Browse shirts, polos, and other clothing categories
 - **Product Detail Pages**: Comprehensive product information with image galleries
-- **Shopping Cart & Wishlist**: Add products to cart and wishlist (localStorage)
+- **Shopping Cart**: Full-featured cart with quantity controls, promo codes, and real-time updates
+- **Checkout System**: Complete checkout flow with COD, Card, and UPI payment options
+- **Toast Notifications**: Beautiful, non-intrusive notifications for user actions
 - **Contact Form**: Get in touch with the team
 - **About Page**: Meet the team and learn about company values
-- **Modern UI/UX**: Clean, Gen Z-focused design with smooth animations
+- **Modern UI/UX**: Clean, Gen Z-focused design with smooth animations and instant feedback
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React.js 18** - UI library
-- **React Router DOM** - Client-side routing
+- **React 18** - Modern UI library with hooks
+- **Vite 5** - Lightning-fast build tool with instant HMR
+- **React Router DOM v6** - Client-side routing
 - **Axios** - HTTP client for API calls
-- **CSS3** - Styling with CSS Variables
+- **CSS3** - Custom styling with CSS Variables
+- **Context API** - Global state management for toast notifications
 - **Google Fonts** - Inter & Montserrat typography
 
 ### Backend
@@ -39,6 +43,8 @@ A modern, full-stack e-commerce web application built with React.js and Node.js.
 - Node.js (v14 or higher)
 - MongoDB (local or MongoDB Atlas)
 - npm or yarn
+
+> **Note**: This project uses Vite for blazing fast development with instant HMR and optimized builds.
 
 ### 1. Clone the repository
 ```bash
@@ -85,7 +91,7 @@ Server runs on: `http://localhost:5000`
 
 ### 8. Start the Frontend (in a new terminal)
 ```bash
-npm start
+npm run dev
 ```
 Frontend runs on: `http://localhost:3000`
 
@@ -95,12 +101,15 @@ Frontend runs on: `http://localhost:3000`
 omnicart/
 ├── src/                          # Frontend React application
 │   ├── components/
-│   │   ├── Header/              # Navigation header
-│   │   └── Footer/              # Footer component
+│   │   ├── Header/              # Navigation header with cart badge
+│   │   ├── Footer/              # Footer component
+│   │   └── Toast/               # Toast notification system
 │   ├── pages/
 │   │   ├── Home/                # Landing page
 │   │   ├── ProductGrid/         # Product listing
 │   │   ├── ProductDetail/       # Product details
+│   │   ├── Cart/                # Shopping cart
+│   │   ├── Checkout/            # Checkout page
 │   │   ├── About/               # About us page
 │   │   ├── Contact/             # Contact form
 │   │   ├── Login/               # Login page
@@ -111,7 +120,8 @@ omnicart/
 │   ├── data/
 │   │   └── products.js          # Product data
 │   ├── App.jsx                  # Main app component
-│   └── index.js                 # Entry point
+│   ├── main.jsx                 # Vite entry point
+│   └── index.css                # Global styles
 │
 └── server/                       # Backend Node.js application
     ├── models/
@@ -170,18 +180,28 @@ omnicart/
 - Social media links
 - Responsive layout
 
-### Login Page
-- Sign in/Sign up toggle
-- Form validation
-- Animated background
-- Feature highlights
+### Cart & Checkout
+- Shopping cart with localStorage persistence
+- Quantity controls and item removal
+- Promo code support (OMNI10, WELCOME20)
+- Multi-step checkout with form validation
+- Multiple payment methods (COD, Card, UPI)
+- Order summary with real-time calculations
+
+### Toast Notification System
+- Success, error, warning, and info notifications
+- Auto-dismiss with customizable duration
+- Stacked notifications support
+- Smooth animations and transitions
+- Mobile-responsive design
 
 ## 🎯 Available Scripts
 
 ### Frontend
-- `npm start` - Runs the React app in development mode
+- `npm run dev` - Runs the React app in development mode with Vite
 - `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
 
 ### Backend
 - `npm run dev` - Starts server with nodemon (auto-restart)
@@ -255,24 +275,49 @@ The app uses JWT (JSON Web Tokens) for authentication:
 - Responsive breakpoints
 - Grid-based layouts
 
+## ⚡ Why Vite?
+
+This project uses Vite instead of Create React App for:
+- **Instant Server Start**: No bundling required in development
+- **Lightning Fast HMR**: Changes reflect instantly
+- **Optimized Builds**: Better production bundles with Rollup
+- **Modern by Default**: Native ES modules support
+- **Better DX**: Improved developer experience
+
 ## 🚀 Deployment
 
 ### Frontend Deployment (Netlify/Vercel)
 1. Build the project: `npm run build`
-2. Deploy the `build` folder
+2. Deploy the `build` folder (or `dist` if not configured)
 3. Configure redirects for React Router:
    ```
    /* /index.html 200
    ```
+4. Set environment variable: `VITE_API_URL=your-backend-url`
 
 ### Backend Deployment (Heroku/Railway)
 1. Set environment variables
 2. Deploy the `server` directory
-3. Update frontend API URL in `src/services/api.js`
+3. Update frontend API URL in `.env`
 
 ### Database
 - Use MongoDB Atlas for cloud database
 - Update `MONGODB_URI` in environment variables
+
+## 🔧 Environment Variables
+
+### Frontend (.env in root)
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+### Backend (.env in server/)
+```env
+MONGODB_URI=mongodb://localhost:27017/omnicart
+PORT=5000
+JWT_SECRET=your_secret_key_here
+NODE_ENV=development
+```
 
 ## 🤝 Contributing
 
@@ -282,9 +327,15 @@ The app uses JWT (JSON Web Tokens) for authentication:
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
 
+## 🎁 Promo Codes
+
+Try these promo codes at checkout:
+- **OMNI10** - 10% discount
+- **WELCOME20** - 20% discount
+
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ## 👥 Team
 

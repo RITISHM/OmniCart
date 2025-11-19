@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useToast } from '../../components/Toast/ToastContainer';
 import { productsData } from '../../data/products';
 import './ProductDetail.css';
 
@@ -7,6 +8,7 @@ const ProductDetail = () => {
   const { collection, id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const { showSuccess, showWarning, showInfo } = useToast();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
@@ -91,17 +93,44 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     if (!selectedSize && product.sizes && product.sizes.length > 0) {
-      alert('Please select a size');
+      showWarning('Please select a size');
       return;
     }
     
-    // Here you would typically add to cart logic
-    alert(`Added ${quantity} x ${product.name} (${selectedSize}) to cart!`);
+    // Add to cart
+    const cartItem = {
+      id: `${product.id}-${selectedSize}-${Date.now()}`,
+      productId: product.id,
+      name: product.name,
+      category: product.category,
+      price: product.price,
+      image: product.image_main,
+      size: selectedSize,
+      quantity: quantity
+    };
+
+    // Get existing cart
+    const existingCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    
+    // Add new item
+    existingCart.push(cartItem);
+    
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+    
+    // Trigger storage event for cart count update
+    window.dispatchEvent(new Event('storage'));
+    
+    showSuccess(`Added ${quantity} x ${product.name} to cart!`);
   };
 
   const handleWishlistToggle = () => {
     setIsWishlisted(!isWishlisted);
-    // Here you would typically save to wishlist
+    if (!isWishlisted) {
+      showSuccess('Added to wishlist!');
+    } else {
+      showInfo('Removed from wishlist');
+    }
   };
 
   const handleTabChange = (tab) => {

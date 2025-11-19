@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useToast } from '../../components/Toast/ToastContainer';
 import './Home.css';
 
 const Home = () => {
   const [showAllCollections, setShowAllCollections] = useState(false);
+  const { showSuccess } = useToast();
 
   useEffect(() => {
     // Hero section staggered animations - exact copy from original animations.js
@@ -758,7 +760,7 @@ const Home = () => {
           <div className="newsletter-container">
             <form className="newsletter-form" onSubmit={(e) => {
               e.preventDefault();
-              alert('Thank you for subscribing to our newsletter!');
+              showSuccess('Thank you for subscribing to our newsletter!');
               e.target.reset();
             }}>
               <input

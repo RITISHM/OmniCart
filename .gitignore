@@ -1,87 +1,32 @@
-# Dependencies
-node_modules/
-server/node_modules/
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Production builds
-build/
-dist/
-*.tgz
-*.tar.gz
+node_modules
+dist
+dist-ssr
+build
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Environment variables
 .env
 .env.local
+.env.production.local
 .env.development.local
 .env.test.local
-.env.production.local
-server/.env
-
-# Logs
-logs/
-*.log
-server/logs/
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# Testing coverage
-coverage/
-*.lcov
-.nyc_output
-
-# Cache directories
-.cache/
-.parcel-cache/
-.npm/
-.eslintcache
-.stylelintcache
-*.tsbuildinfo
-
-# IDEs and editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-*.sublime-project
-*.sublime-workspace
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
-data/
-mongodb/
-
-# Temporary files
-tmp/
-temp/
-*.tmp
-*.temp
-
-# Documentation (if you want to keep docs, remove these lines)
-*.md.backup
-.history/
-
-# Optional: Uncomment if not using package-lock.json
-# package-lock.json
-
-# Optional: Uncomment if not using yarn.lock
-# yarn.lock
