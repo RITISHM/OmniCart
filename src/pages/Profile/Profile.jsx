@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { userAPI, authAPI } from '../../services/api';
 import './Profile.css';
 
 const Profile = () => {
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [userData, setUserData] = useState({
     name: '',
     email: '',
@@ -15,25 +18,43 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    // Check if user is logged in
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-      navigate('/login');
-      return;
-    }
+    const loadProfile = async () => {
+      // Check if user is logged in
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const token = localStorage.getItem('token');
+      
+      if (!isLoggedIn || !token) {
+        navigate('/login');
+        return;
+      }
 
-    // Load user data from localStorage
-    const storedName = localStorage.getItem('userName') || 'User';
-    const storedEmail = localStorage.getItem('userEmail') || '';
-    
-    setUserData({
-      name: storedName,
-      email: storedEmail,
-      phone: localStorage.getItem('userPhone') || '',
-      address: localStorage.getItem('userAddress') || '',
-      city: localStorage.getItem('userCity') || '',
-      country: localStorage.getItem('userCountry') || ''
-    });
+      try {
+        setLoading(true);
+        // Load user data from MongoDB
+        const data = await userAPI.getProfile();
+        console.log('✅ Profile loaded from MongoDB:', data);
+        
+        setUserData({
+          name: data.name || '',
+          email: data.email || '',
+          phone: data.phone || '',
+          address: data.address || '',
+          city: data.city || '',
+          country: data.country || ''
+        });
+      } catch (error) {
+        console.error('❌ Error loading profile:', error);
+        // If token is invalid, redirect to login
+        if (error.message === 'Not authorized, token failed') {
+          localStorage.clear();
+          navigate('/login');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProfile();
   }, [navigate]);
 
   const handleChange = (e) => {
@@ -43,26 +64,52 @@ const Profile = () => {
     });
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     
-    // Save to localStorage
-    localStorage.setItem('userName', userData.name);
-    localStorage.setItem('userEmail', userData.email);
-    localStorage.setItem('userPhone', userData.phone);
-    localStorage.setItem('userAddress', userData.address);
-    localStorage.setItem('userCity', userData.city);
-    localStorage.setItem('userCountry', userData.country);
-    
-    setIsEditing(false);
+    try {
+      setSaving(true);
+      // Save to MongoDB
+      const updated = await userAPI.updateProfile(userData);
+      console.log('✅ Profile updated in MongoDB:', updated);
+      
+      setUserData({
+        name: updated.name || '',
+        email: updated.email || '',
+        phone: updated.phone || '',
+        address: updated.address || '',
+        city: updated.city || '',
+        country: updated.country || ''
+      });
+      
+      setIsEditing(false);
+      alert('Profile updated successfully!');
+    } catch (error) {
+      console.error('❌ Error updating profile:', error);
+      alert('Failed to update profile. Please try again.');
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userEmail');
+    authAPI.logout();
     navigate('/login');
   };
+
+  if (loading) {
+    return (
+      <div className="profile-page">
+        <div className="container">
+          <div className="profile-wrapper">
+            <div style={{ textAlign: 'center', padding: '3rem' }}>
+              <p>Loading profile...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="profile-page">
@@ -186,8 +233,8 @@ const Profile = () => {
 
                 {isEditing && (
                   <div className="form-actions">
-                    <button type="submit" className="btn btn-primary">
-                      Save Changes
+                    <button type="submit" className="btn btn-primary" disabled={saving}>
+                      {saving ? 'Saving...' : 'Save Changes'}
                     </button>
                   </div>
                 )}

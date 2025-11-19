@@ -1,85 +1,132 @@
-# OmniCart React - Gen Z Clothing Brand
+# OmniCart - Gen Z Clothing Brand
 
-A modern, responsive e-commerce web application built with React.js, converted from the original HTML/CSS/JavaScript version. OmniCart offers a seamless shopping experience with dynamic product grids, intuitive navigation, and streamlined cart management.
+A modern, full-stack e-commerce web application built with React.js and Node.js. OmniCart offers a seamless shopping experience with user authentication, dynamic product displays, and MongoDB integration.
 
 ## 🚀 Features
 
+- **User Authentication**: Complete signup/login system with JWT tokens and MongoDB
+- **User Profiles**: View and edit user information with secure authentication
 - **Responsive Design**: Adapts perfectly to any device - desktop, tablet, or mobile
 - **Dynamic Product Grid**: Interactive product displays with filtering and sorting
 - **Product Collections**: Browse shirts, polos, and other clothing categories
 - **Product Detail Pages**: Comprehensive product information with image galleries
-- **Shopping Cart & Wishlist**: Add products to cart and wishlist with notifications
-- **User Authentication**: Login and signup functionality
+- **Shopping Cart & Wishlist**: Add products to cart and wishlist (localStorage)
 - **Contact Form**: Get in touch with the team
-- **About Page**: Learn about the brand and team
+- **About Page**: Meet the team and learn about company values
 - **Modern UI/UX**: Clean, Gen Z-focused design with smooth animations
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js 18
-- **Routing**: React Router DOM
-- **Styling**: CSS3 with CSS Variables
-- **Fonts**: Inter & Montserrat from Google Fonts
-- **Icons**: Custom SVG icons
-- **State Management**: React Hooks (useState, useEffect)
+### Frontend
+- **React.js 18** - UI library
+- **React Router DOM** - Client-side routing
+- **Axios** - HTTP client for API calls
+- **CSS3** - Styling with CSS Variables
+- **Google Fonts** - Inter & Montserrat typography
 
-## 📦 Installation
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB ODM
+- **JWT** - Authentication tokens
+- **bcryptjs** - Password hashing
+- **CORS** - Cross-origin resource sharing
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd omnicart-react
-   ```
+## 📦 Installation & Setup
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or MongoDB Atlas)
+- npm or yarn
 
-3. **Start the development server**
-   ```bash
-   npm start
-   ```
+### 1. Clone the repository
+```bash
+git clone <repository-url>
+cd omnicart
+```
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000`
+### 2. Install Frontend Dependencies
+```bash
+npm install
+```
+
+### 3. Install Backend Dependencies
+```bash
+cd server
+npm install
+cd ..
+```
+
+### 4. Configure Environment Variables
+Create a `.env` file in the `server` directory:
+```env
+MONGODB_URI=mongodb://localhost:27017/omnicart
+PORT=5000
+JWT_SECRET=your_secret_key_here
+NODE_ENV=development
+```
+
+### 5. Start MongoDB
+Make sure MongoDB is running on your system.
+
+### 6. Seed Database (Optional)
+```bash
+cd server
+npm run seed
+```
+
+### 7. Start the Backend Server
+```bash
+cd server
+npm run dev
+```
+Server runs on: `http://localhost:5000`
+
+### 8. Start the Frontend (in a new terminal)
+```bash
+npm start
+```
+Frontend runs on: `http://localhost:3000`
 
 ## 🏗️ Project Structure
 
 ```
-src/
-├── components/
-│   ├── Header/
-│   │   ├── Header.js
-│   │   └── Header.css
-│   └── Footer/
-│       ├── Footer.js
-│       └── Footer.css
-├── pages/
-│   ├── Home/
-│   │   ├── Home.js
-│   │   └── Home.css
-│   ├── ProductGrid/
-│   │   ├── ProductGrid.js
-│   │   └── ProductGrid.css
-│   ├── ProductDetail/
-│   │   ├── ProductDetail.js
-│   │   └── ProductDetail.css
-│   ├── About/
-│   │   ├── About.js
-│   │   └── About.css
-│   ├── Contact/
-│   │   ├── Contact.js
-│   │   └── Contact.css
-│   └── Login/
-│       ├── Login.js
-│       └── Login.css
-├── data/
-│   └── products.js
-├── App.js
-├── App.css
-├── index.js
-└── index.css
+omnicart/
+├── src/                          # Frontend React application
+│   ├── components/
+│   │   ├── Header/              # Navigation header
+│   │   └── Footer/              # Footer component
+│   ├── pages/
+│   │   ├── Home/                # Landing page
+│   │   ├── ProductGrid/         # Product listing
+│   │   ├── ProductDetail/       # Product details
+│   │   ├── About/               # About us page
+│   │   ├── Contact/             # Contact form
+│   │   ├── Login/               # Login page
+│   │   ├── Signup/              # Signup page
+│   │   └── Profile/             # User profile
+│   ├── services/
+│   │   └── api.js               # API service layer
+│   ├── data/
+│   │   └── products.js          # Product data
+│   ├── App.jsx                  # Main app component
+│   └── index.js                 # Entry point
+│
+└── server/                       # Backend Node.js application
+    ├── models/
+    │   ├── User.js              # User schema
+    │   ├── Product.js           # Product schema
+    │   └── Order.js             # Order schema
+    ├── routes/
+    │   ├── auth.js              # Authentication routes
+    │   ├── users.js             # User routes
+    │   ├── products.js          # Product routes
+    │   └── orders.js            # Order routes
+    ├── middleware/
+    │   └── auth.js              # JWT authentication
+    ├── server.js                # Express server
+    └── seed.js                  # Database seeding
 ```
 
 ## 🎨 Key Components
@@ -131,36 +178,64 @@ src/
 
 ## 🎯 Available Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
+### Frontend
+- `npm start` - Runs the React app in development mode
 - `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App (one-way operation)
+- `npm test` - Launches the test runner
+
+### Backend
+- `npm run dev` - Starts server with nodemon (auto-restart)
+- `npm start` - Starts server in production mode
+- `npm run seed` - Seeds database with sample data
+
+## 🔌 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+
+### Users (Protected)
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
+
+### Products
+- `GET /api/products` - Get all products
+- `GET /api/products?category=polos` - Filter by category
+- `GET /api/products/:id` - Get product by ID
+
+### Orders (Protected)
+- `POST /api/orders` - Create new order
+- `GET /api/orders/myorders` - Get user's orders
+- `GET /api/orders/:id` - Get order by ID
+
+## 🔐 Authentication
+
+The app uses JWT (JSON Web Tokens) for authentication:
+- Tokens are stored in localStorage
+- Protected routes require valid token
+- Automatic token refresh on page reload
+- Secure password hashing with bcrypt
 
 ## 🌟 Features in Detail
+
+### User Authentication System
+- Complete signup/login flow
+- JWT token-based authentication
+- Password encryption with bcrypt
+- Protected routes and API endpoints
+- User profile management
+
+### Product Management
+- Dynamic product data from local storage
+- Category-based filtering (Polos, Shirts)
+- Product detail pages with images
+- Size and quantity selection
 
 ### Responsive Design
 - Mobile-first approach
 - Flexible grid layouts
 - Touch-friendly interactions
 - Optimized for all screen sizes
-
-### Product Management
-- Dynamic product data loading
-- Category-based filtering
-- Search and sort functionality
-- Product image galleries
-
-### User Experience
-- Smooth animations and transitions
-- Loading states and feedback
-- Form validation and error handling
-- Notification system
-
-### Performance
-- Optimized images and assets
-- Efficient state management
-- Lazy loading where applicable
-- Clean, semantic code structure
 
 ## 🎨 Design System
 
@@ -182,19 +257,22 @@ src/
 
 ## 🚀 Deployment
 
-### Build for Production
-```bash
-npm run build
-```
-
-### Deploy to Netlify
+### Frontend Deployment (Netlify/Vercel)
 1. Build the project: `npm run build`
-2. Upload the `build` folder to Netlify
-3. Configure redirects for React Router
+2. Deploy the `build` folder
+3. Configure redirects for React Router:
+   ```
+   /* /index.html 200
+   ```
 
-### Deploy to Vercel
-1. Connect your GitHub repository
-2. Vercel will automatically detect React and deploy
+### Backend Deployment (Heroku/Railway)
+1. Set environment variables
+2. Deploy the `server` directory
+3. Update frontend API URL in `src/services/api.js`
+
+### Database
+- Use MongoDB Atlas for cloud database
+- Update `MONGODB_URI` in environment variables
 
 ## 🤝 Contributing
 

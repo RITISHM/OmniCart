@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { authAPI } from '../../services/api';
 import './Signup.css';
 
 const Signup = () => {
@@ -11,6 +12,7 @@ const Signup = () => {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [passwordValidation, setPasswordValidation] = useState({
     minLength: false,
     hasUpperCase: false,
@@ -37,7 +39,7 @@ const Signup = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validation
@@ -65,16 +67,22 @@ const Signup = () => {
       return;
     }
 
-    // Here you would typically make an API call to register
-    console.log('Signup attempt:', formData);
-    
-    // Simulate successful signup
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('userEmail', formData.email);
-    localStorage.setItem('userName', formData.name);
-    
-    // Redirect to home page
-    navigate('/');
+    setLoading(true);
+    setError('');
+
+    try {
+      // Call MongoDB API
+      const data = await authAPI.register(formData.name, formData.email, formData.password);
+      console.log('✅ Signup successful:', data);
+      
+      // Navigate to home page
+      navigate('/');
+    } catch (error) {
+      console.error('❌ Signup error:', error);
+      setError(error.message || 'Registration failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,7 +167,9 @@ const Signup = () => {
                 />
               </div>
               
-              <button type="submit" className="btn btn-primary">Create Account</button>
+              <button type="submit" className="btn btn-primary" disabled={loading}>
+                {loading ? 'Creating Account...' : 'Create Account'}
+              </button>
             </form>
             
             <div className="auth-divider">

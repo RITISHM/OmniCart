@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { authAPI } from '../../services/api';
 import './Login.css';
 
 const Login = () => {
@@ -9,6 +10,7 @@ const Login = () => {
     password: ''
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,7 +20,7 @@ const Login = () => {
     setError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Basic validation
@@ -34,15 +36,22 @@ const Login = () => {
       return;
     }
 
-    // Here you would typically make an API call to authenticate
-    console.log('Login attempt:', formData);
-    
-    // Simulate successful login
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('userEmail', formData.email);
-    
-    // Redirect to home page
-    navigate('/');
+    setLoading(true);
+    setError('');
+
+    try {
+      // Call MongoDB API
+      const data = await authAPI.login(formData.email, formData.password);
+      console.log('✅ Login successful:', data);
+      
+      // Navigate to home page
+      navigate('/');
+    } catch (error) {
+      console.error('❌ Login error:', error);
+      setError(error.message || 'Invalid email or password');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -90,7 +99,9 @@ const Login = () => {
                 <a href="#forgot" className="forgot-password">Forgot password?</a>
               </div>
               
-              <button type="submit" className="btn btn-primary">Login</button>
+              <button type="submit" className="btn btn-primary" disabled={loading}>
+                {loading ? 'Logging in...' : 'Login'}
+              </button>
             </form>
             
             <div className="auth-divider">
